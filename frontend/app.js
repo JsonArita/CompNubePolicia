@@ -30,7 +30,7 @@ const form = document.getElementById('search-form');
 const btnGeo = document.getElementById('btn-geolocation');
 const inputLat = document.getElementById('latitude');
 const inputLon = document.getElementById('longitude');
-const inputApiUrl = document.getElementById('api-url');
+const API_URL = "http://127.0.0.1:5000/estaciones";
 const resultsList = document.getElementById('results-list');
 const resultsCount = document.getElementById('results-count');
 const loadingState = document.getElementById('loading-state');
@@ -68,7 +68,6 @@ form.addEventListener('submit', async (e) => {
     
     const lat = parseFloat(inputLat.value);
     const lon = parseFloat(inputLon.value);
-    const apiUrl = inputApiUrl.value.trim();
 
     if (isNaN(lat) || isNaN(lon)) {
         alert("Por favor, ingresa coordenadas válidas.");
@@ -85,10 +84,10 @@ form.addEventListener('submit', async (e) => {
         let results = [];
         let sourceUsed = '';
 
-        if (apiUrl) {
+        if (API_URL) {
             try {
                 // Construct URL with parameters
-                const fetchUrl = new URL(apiUrl);
+                const fetchUrl = new URL(API_URL);
                 fetchUrl.searchParams.append('lat', lat);
                 fetchUrl.searchParams.append('lon', lon);
                 fetchUrl.searchParams.append('limite', 3);
