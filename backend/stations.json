@@ -1,0 +1,13 @@
+[
+  { "nombre": "Estación Policial Centro (Tegucigalpa)", "lat": 14.1131, "lon": -87.1852 },
+  { "nombre": "Estación Policial Norte - Belén (Tegucigalpa)", "lat": 14.1290, "lon": -87.1960 },
+  { "nombre": "Estación Policial Sur - Loarque (Tegucigalpa)", "lat": 14.0720, "lon": -87.2200 },
+  { "nombre": "Estación Policial Kennedy (Tegucigalpa)", "lat": 14.0880, "lon": -87.1750 },
+  { "nombre": "Estación Policial El Manchén (Tegucigalpa)", "lat": 14.1120, "lon": -87.1890 },
+  { "nombre": "Estación Policial Suncery (San Pedro Sula)", "lat": 15.4990, "lon": -88.0128 },
+  { "nombre": "Posta Policial Estadio Olímpico (San Pedro Sula)", "lat": 15.4766, "lon": -88.0211 },
+  { "nombre": "Primera Estación Policial S.O. (San Pedro Sula)", "lat": 15.4995, "lon": -88.0298 },
+  { "nombre": "Estación Policial Barrio Guamilito (San Pedro Sula)", "lat": 15.5098, "lon": -88.0264 },
+  { "nombre": "Jefatura de Policía - UDEP-3 (Comayagua)", "lat": 14.4612, "lon": -87.6375 },
+  { "nombre": "Posta Policial La Zarcita (Comayagua)", "lat": 14.4485, "lon": -87.6292 }
+]

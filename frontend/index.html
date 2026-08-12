@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Encuentra las estaciones policiales más cercanas a tu ubicación de forma rápida y sencilla.">
+    <title>Estaciones Policiales Cercanas</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for beautiful icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="glow-bg"></div>
+    
+    <main class="app-container">
+        <header class="app-header">
+            <div class="badge"><i class="fa-solid fa-shield-halved"></i> Seguridad Ciudadana</div>
+            <h1>Estaciones Policiales <br><span class="highlight">Más Cercanas</span></h1>
+            <p class="subtitle">Ingresa tus coordenadas o usa tu ubicación actual para encontrar los 3 centros de policía más próximos.</p>
+        </header>
+
+        <section class="search-card">
+            <form id="search-form" class="coords-form">
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="latitude"><i class="fa-solid fa-location-crosshairs"></i> Latitud</label>
+                        <input type="number" step="any" id="latitude" placeholder="Ej. 14.0818" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="longitude"><i class="fa-solid fa-location-dot"></i> Longitud</label>
+                        <input type="number" step="any" id="longitude" placeholder="Ej. -87.1921" required>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" id="btn-geolocation" class="btn btn-secondary">
+                        <i class="fa-solid fa-gps"></i> Mi Ubicación
+                    </button>
+                    <button type="submit" id="btn-search" class="btn btn-primary">
+                        <i class="fa-solid fa-magnifying-glass"></i> Buscar Estaciones
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Service URL configuration (collapsible settings for easier testing) -->
+        <section class="settings-card">
+            <details>
+                <summary><i class="fa-solid fa-gear"></i> Configuración del Servicio API (Opcional)</summary>
+                <div class="settings-content">
+                    <label for="api-url">URL de la API en la nube:</label>
+                    <input type="url" id="api-url" placeholder="Ej. https://tu-api.onrender.com/estaciones" value="">
+                    <small>Si se deja vacío o no está disponible, la app calculará las distancias localmente en el navegador.</small>
+                </div>
+            </details>
+        </section>
+
+        <section class="results-container">
+            <div class="results-header">
+                <h2><i class="fa-solid fa-list-check"></i> Estaciones Encontradas</h2>
+                <span class="results-count" id="results-count">Mostrando 0 resultados</span>
+            </div>
+            
+            <div id="loading-state" class="loading-state hidden">
+                <div class="spinner"></div>
+                <p>Calculando distancias...</p>
+            </div>
+
+            <div id="results-list" class="results-list">
+                <div class="empty-state">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <p>Ingresa coordenadas y presiona "Buscar" para calcular las estaciones más cercanas.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p>&copy; 2026 Servicio Público de Seguridad. Construido con fines didácticos en la nube.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
