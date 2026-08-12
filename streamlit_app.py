@@ -3,6 +3,8 @@ import pandas as pd
 import math
 import os
 import json
+from streamlit_js_eval import get_geolocation
+
 
 # Set Page Config
 st.set_page_config(
@@ -126,6 +128,18 @@ with col1:
     user_lat = st.number_input("Latitud", value=14.0818, format="%.6f", help="Ejemplo de Tegucigalpa: 14.0818")
 with col2:
     user_lon = st.number_input("Longitud", value=-87.1921, format="%.6f", help="Ejemplo de Tegucigalpa: -87.1921")
+
+# Geolocation detection checkbox
+if st.checkbox("🛰️ Usar ubicación de mi dispositivo en tiempo real"):
+    loc = get_geolocation()
+    if loc:
+        if 'error' in loc:
+            st.error(f"Error de ubicación: {loc['error']['message']}")
+        elif 'coords' in loc:
+            user_lat = loc['coords']['latitude']
+            user_lon = loc['coords']['longitude']
+            st.success(f"✓ Ubicación GPS sincronizada: {user_lat:.4f}, {user_lon:.4f}")
+
 
 # Quick Coordinate presets (useful for testing different cities)
 st.markdown("**Presets de prueba:**")
